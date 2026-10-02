@@ -1,0 +1,21 @@
+-- Import lewat phpMyAdmin (pilih database dulu, lalu tab Import / SQL)
+CREATE TABLE IF NOT EXISTS users (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(80) NOT NULL,
+  email VARCHAR(120) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS transaksi (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  user_id INT UNSIGNED NOT NULL,
+  tanggal DATE NOT NULL,
+  tipe ENUM('pemasukan','pengeluaran') NOT NULL,
+  kategori VARCHAR(40) NOT NULL,
+  deskripsi VARCHAR(120) DEFAULT '',
+  jumlah DECIMAL(14,2) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  INDEX (user_id, tanggal),
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

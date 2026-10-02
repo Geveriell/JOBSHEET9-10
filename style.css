@@ -1,0 +1,73 @@
+:root{--blue:#0b57d0;--sky:#cfe4ff;--ink:#14213d;--mute:#6b7a93;--line:#e3ebf6;--in:#168a57;--out:#d1432f;--dark:#172036}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font:15px/1.5 "Segoe UI",system-ui,sans-serif;
+  background:linear-gradient(180deg,#0a4bb8 0,#2f80ed 260px,#dcebff 520px,#eef4fc 100%) fixed}
+.phone{max-width:480px;margin:0 auto;padding:18px 16px 40px}
+.hide{display:none!important}
+.muted{color:var(--mute)}
+button,input,select{font:inherit;color:inherit}
+input,select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid #ffb703;outline-offset:2px}
+
+.hello{color:#fff;margin:4px 2px 12px;font-size:14px;letter-spacing:.2px}
+
+/* Kartu rekening: atas gelap, bawah putih */
+.acct{border-radius:18px;overflow:hidden;box-shadow:0 10px 24px #0a2a6b44;margin-bottom:14px}
+.acct-top{background:linear-gradient(135deg,#1d2a4a,var(--dark));color:#fff;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.acct-top p{margin:0;font-size:13px;opacity:.85;text-align:right}
+.pill{background:linear-gradient(90deg,#ffd166,#f4a300);color:#3a2a00;font-weight:700;font-size:12px;padding:5px 12px;border-radius:99px}
+.acct-bot{background:#fff;padding:16px 18px}
+.acct-bot small{color:var(--mute)}
+.saldo-row{display:flex;justify-content:space-between;align-items:center;margin:2px 0 12px}
+.saldo-row strong{font-size:24px;letter-spacing:.5px}
+.eye{font-size:20px;padding:4px 8px;border-radius:8px;color:var(--blue)}
+.acct-links{display:flex;gap:18px;border-top:1px solid var(--line);padding-top:12px;font-size:13px;font-weight:600}
+.acct-links a{color:var(--blue);text-decoration:none}
+
+/* Banner ringkasan bulan ini */
+.banner{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 16px;border-radius:14px;color:#fff;margin-bottom:14px;
+  background:linear-gradient(100deg,#0c3fa8,#5b3fd1)}
+.banner small{opacity:.8}
+.banner p{margin:0;font-size:13px}
+.banner b{color:#fff}
+.banner span{font-size:13px;white-space:nowrap}
+
+/* Lembar putih berisi menu ikon & riwayat */
+.sheet{background:#fff;border-radius:22px 22px 14px 14px;padding:20px 14px 18px;box-shadow:0 -4px 20px #0a2a6b18}
+.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:18px}
+.menu button{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;padding:6px 0;color:var(--ink)}
+.ic{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;font-style:normal;font-size:21px}
+.ic.g{background:#dff5ea;color:var(--in)}.ic.r{background:#fde5e0;color:var(--out)}
+.ic.b{background:#e0ecff;color:var(--blue)}.ic.k{background:#eceff5;color:#4a5670}
+.sheet h2{font-size:16px;margin:4px 4px 10px}
+.filters{display:grid;grid-template-columns:1fr 100px;gap:8px;margin-bottom:6px}
+
+.item{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;padding:12px 4px;border-bottom:1px solid var(--line)}
+.item:last-child{border:0}
+.dot{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:16px}
+.dot.pemasukan{background:#dff5ea;color:var(--in)}.dot.pengeluaran{background:#fde5e0;color:var(--out)}
+.item small{display:block;color:var(--mute)}
+.amt{font-weight:700;text-align:right;white-space:nowrap}
+.amt.pemasukan{color:var(--in)}.amt.pengeluaran{color:var(--out)}
+.amt div{font-weight:400;font-size:12px;margin-top:2px}
+.amt button{color:var(--blue);font-size:12px;padding:2px 6px}
+.amt button.d{color:var(--out)}
+.empty{text-align:center;color:var(--mute);padding:28px 10px}
+
+/* Login */
+.auth-card{margin-top:10vh;background:#fff;border-radius:20px;padding:24px;box-shadow:0 10px 28px #0a2a6b33}
+.auth-card h1{margin:0;color:var(--blue)}
+.auth-card input{margin:6px 0}
+.btn{background:var(--blue);color:#fff;font-weight:600;padding:11px 18px;border-radius:12px;width:100%}
+.btn.ghost{background:#eaf0fb;color:var(--blue)}
+.link{color:var(--blue);margin-top:10px;width:100%;font-size:13px}
+.err{color:var(--out);font-size:13px;min-height:18px;margin:4px 0}
+
+dialog{border:0;border-radius:18px;width:min(420px,92vw);padding:20px;color:var(--ink)}
+dialog::backdrop{background:#0a1a3a99}
+dialog h3{margin:0 0 4px;font-size:18px}
+label{display:block;font-size:13px;color:var(--mute);margin-top:10px}
+label input,label select{margin-top:3px;color:var(--ink)}
+.dlg-act{display:flex;gap:8px;margin-top:6px}
+@media(prefers-reduced-motion:no-preference){.acct,.sheet{transition:transform .15s}}
